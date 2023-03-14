@@ -1,0 +1,11 @@
+#card{
+    border: solid 2px black;
+    display: flex;
+    width: 430px;
+    margin-left:20px;
+    border-radius:10px;
+    padding: 10px;
+}
+#details-list{
+    width: 340px;
+}

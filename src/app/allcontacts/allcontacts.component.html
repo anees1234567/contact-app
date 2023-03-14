@@ -1,0 +1,50 @@
+<div class="container  mt-3">
+
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">All contacts <a class="btn btn-success"   routerLink="add-contact"><i class="fa-solid fa-user-plus"></i></a ></h1>
+                <p class="mt-4" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel praesentium dolore pariatur incidunt suscipit qui numquam facere. Temporibus possimus cum, architecto amet dolorem officiis, facere reiciendis ipsa necessitatibus vitae ex.</p>
+     </div>
+     <div class="row">
+        <div class="col-lg-6">
+            <form action="">
+                <input type="text" placeholder="search contact" class="form-control">
+            </form>
+        </div>
+
+        <div class="col-lg-6">
+            <form action="">
+                <input type="button" value="search" class="btn btn-primary ">
+            </form>
+        </div>
+     </div>
+ </div>
+</div>
+
+<!-- card design -->
+
+    <div class="row ">
+        
+                <div class=" mt-5" id="card" *ngFor="let contact of allcontacts">
+                
+                        <div class="col-3 mt-3">
+                            <img height="80px"  width="100%"  [src]="contact.photo" alt="">
+                        </div>
+                        <div class="mt-3" id="details-list">
+                            <ul class="list-group">
+                                <li class="list-group-item">name:{{contact.name}}</li>
+                                <li class="list-group-item">phone:{{contact.mobile}}</li>
+                            </ul>
+                        </div>
+                        <div class="col-1 d-flex flex-column justify-content-center align-items-center ms-3 ">
+                            <a routerLink="edit-contact/{{contact.id}}" class="btn btn-success"><i class="fa-solid fa-pen"></i></a>
+                            <a routerLink="view-contact/{{contact.id}}" class="btn btn-danger m-2"><i class="fa-solid fa-eye"></i></a>
+                            <button routerLink="edit-contact" (click)="deletecontact(contact.id)" class="btn btn-primary"><i class="fa-solid fa-trash"></i></button>
+        
+                        </div>
+                    
+                </div>
+            </div>
+        
+
+

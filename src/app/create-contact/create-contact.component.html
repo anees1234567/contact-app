@@ -1,0 +1,44 @@
+<div class="header d-flex justify-content-center"> <h1 class="text-success">ADD contact </h1></div>
+<div class="info d-flex justify-content-center"><h4>This is a apge for adding contact details </h4></div>
+
+<pre>{{contact|json}}</pre>
+<div class="row border border-primary">
+    <div class="col-5  border border-dark">
+        <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1"><h4>contact-id</h4></label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" name="id" [(ngModel)]="contact.id" placeholder="enter contact id">
+
+              <label for="exampleFormControlInput1"><h4>Name</h4></label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" name="name" [(ngModel)]="contact.name"  placeholder="enter name">
+              <label for="exampleFormControlInput1"><h4>Email address</h4></label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" name="Email" [(ngModel)]="contact.email"  placeholder="enter  email">
+              <label for="exampleFormControlInput1"><h4>image</h4></label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" name="image" [(ngModel)]="contact.photo"  placeholder="enter the image url">
+
+              <label for="exampleFormControlInput1"><h4>phone number</h4></label>
+              <input type="" class="form-control" id="exampleFormControlInput1" name="mobile" [(ngModel)]="contact.mobile" placeholder="enter phone number">
+              <label for="exampleFormControlInput1"><h4>title</h4></label>
+              <input type="" class="form-control" id="exampleFormControlInput1"name="title" [(ngModel)]="contact.title" p placeholder="enter title">
+
+           
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1"><h4>groups</h4></label>
+              <select class="form-control" id="exampleFormControlSelect1" name="groupid" [(ngModel)]="contact.groupId">
+                <option selected disabled  hidden>{{contact.groupId}}</option>
+                <option [value]="group.id" *ngFor="let group of allgroup" >{{group.name}}</option>
+          
+              </select>
+            </div>
+
+            <button (click)="addcontact()" class="bg-warning"> add</button>
+            
+           
+          </form>
+    </div>
+    <div class="col-3">
+       <img [src]="contact.photo"    width="160px" height="160px" alt="">
+
+</div>  
+    </div>
